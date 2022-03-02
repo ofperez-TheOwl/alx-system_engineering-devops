@@ -1,1 +1,0 @@
-Here is the dedicated folder for the tasks of this project.
