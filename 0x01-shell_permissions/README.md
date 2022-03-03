@@ -7,3 +7,4 @@ Each file is a script that perfoms a shell permission action.
 2-groups prints the groups of the current user
 changes the owner of the file hello to the user betty
 4-empty creates an empty file named hello
+5-execute gives execute permission to the owner of the file named hello
