@@ -12,3 +12,4 @@ changes the owner of the file hello to the user betty
 6-multiple_permissions gives execute permission to everybody for the file hello
 8-James_Bond gives zero permission to owner and owner group but execute permission to other for the file hello
 9-John_Doe gives  a special 753 permission for the file hello
+12-directory_permissions creates a directory with 751 permission
