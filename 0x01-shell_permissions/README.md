@@ -15,3 +15,4 @@ changes the owner of the file hello to the user betty
 12-directory_permissions creates a directory with 751 permission
 13-change_group changes the owner group of file hello to "school"
 10-mirror_permissions sets the mode of file hello to the same as olleh
+11-directories_permissions adds execute permission to all directory inside of current directory
