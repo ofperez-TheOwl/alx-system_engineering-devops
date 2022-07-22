@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#This script displays 1 to 20 times and add precision
+#for 4th and 9th and 17th iteration
+i=1
+while [ $i -le 20 ]
+do
+	echo $i
+	case $i in
+		4)
+		echo "bad luck from China"
+		;;
+
+		9)
+		echo "bad luck from Japan"
+		;;
+
+		17)
+		echo "bad luck from Italy"
+		;;
+	esac
+	i=$((i + 1))
+done
