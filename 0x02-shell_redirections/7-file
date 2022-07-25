@@ -1,5 +1,2 @@
 #!/bin/bash
-#script that creates a file named exactly \*\\'"Best School"\'\\*$\?\*\*\*\*\*:)
-touch \\*\\\\'\"Best_School\"\\'\\\\*$\\?\\*\\*\\*\\*\\*:)
-ls
-rm \\*\\*
+echo "Best School" > "\*\\\'\"Best School\"\'\\\*$\?\*\*\*\*\*:)"
