@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#Why you no love me scritpt
+msg1()
+{
+	echo "I hate the kill command"
+}
+msg2()
+{
+	echo "Y U no love me?!"
+}
+end()
+{
+	rm /var/run/myscript.pid
+	exit
+}
+echo "$$" > /var/run/myscript.pid
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+	trap "msg1 end" SIGTERM
+	trap msg2 SIGINT
+	trap end SIGQUIT
+done
