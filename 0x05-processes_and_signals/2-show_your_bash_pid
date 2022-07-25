@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#script that displays a list of currently running processes with bash in their name
+ps -faux | awk '/bash/ {print $0}'
