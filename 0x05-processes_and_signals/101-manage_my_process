@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#script that manages manage_my_process
+start_process()
+{
+	./manage_my_process &
+	pgrep -f ./manage_my_process > /var/run/my_process.pid
+}
+stop_process()
+{
+	kill "$(read -r /var/run/my_process.pid)"
+	rm /var/run/my_process.pid
+}
+
+if [ $# == 1 ] && { [ "$1" == 'start' ] || [ "$1" == 'stop' ] || [ "$1" == 'restart' ]; }
+then
+	case $1 in
+		"start")
+			start_process
+			echo "manage_my_process started"
+			;;
+		"stop")
+			stop_process
+			echo "manage_my_process stopped"
+			;;
+		"restart")
+			stop_process
+			start_proess
+			echo "manage_my_process restarted"
+			;;
+	esac
+else
+	echo "Usage: manage_my_process {start|stop|restart}"
+fi
