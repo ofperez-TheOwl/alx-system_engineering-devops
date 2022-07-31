@@ -10,7 +10,7 @@ msg2()
 }
 end()
 {
-	rm /var/run/myscript.pid
+	rm -f /var/run/myscript.pid
 	exit
 }
 echo "$$" > /var/run/myscript.pid
@@ -18,7 +18,7 @@ while true
 do
 	echo "To infinity and beyond"
 	sleep 2
-	trap "msg1 end" SIGTERM
+	trap "msg1; end" SIGTERM
 	trap msg2 SIGINT
 	trap end SIGQUIT
 done
