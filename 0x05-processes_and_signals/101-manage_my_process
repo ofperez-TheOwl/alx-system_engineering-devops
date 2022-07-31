@@ -7,7 +7,7 @@ start_process()
 }
 stop_process()
 {
-	kill "$(read -r /var/run/my_process.pid)"
+	kill "$(cat /var/run/my_process.pid)"
 	rm /var/run/my_process.pid
 }
 
@@ -24,7 +24,7 @@ then
 			;;
 		"restart")
 			stop_process
-			start_proess
+			start_process
 			echo "manage_my_process restarted"
 			;;
 	esac
