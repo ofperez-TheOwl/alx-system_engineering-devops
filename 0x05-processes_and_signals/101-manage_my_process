@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 #script that manages manage_my_process
+
+pid_file="/var/run/my_process.pid"
+
 start_process()
 {
 	./manage_my_process &
-	pgrep -f ./manage_my_process > /var/run/my_process.pid
+	pgrep -f ./manage_my_process > "$pid_file"
 }
+
 stop_process()
 {
-	kill "$(cat /var/run/my_process.pid)"
-	rm -f /var/run/my_process.pid
+	kill "$(cat $pid_file)"
+	rm -f "$pid_file"
 }
 
 if [ $# == 1 ] && { [ "$1" == 'start' ] || [ "$1" == 'stop' ] || [ "$1" == 'restart' ]; }
