@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 #script that  displays all active IPv4s on machine
-ifconfig | grep "inet" | cut -d " " -f10
-#ifconfig | grep "inet addr" | cut -d":" -f2 | cut -d" " -f1
+
+ifconfig | grep "inet " | sed "s/^\s*i/^i/" | cut -d " " -f2
+#ip6#ifconfig | grep "inet6" | sed "s/^\s*i/^i/" | cut -d " " -f2
+#another method#ifconfig | grep "inet addr" | cut -d":" -f2 | cut -d" " -f1
